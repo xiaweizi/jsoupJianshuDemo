@@ -155,7 +155,7 @@
                 android:maxLines="3"
                 android:padding="3dp"
                 android:text="文／明道创始人任向晖 德鲁克的《管理的实践》写于1954年。他老人家提出目标管理（management by objective）已经半个多世纪了。为什么基于目标管理思想的O..."
-                android:textColor="#333" />
+                android:textColor="#403f3f" />
 
 
         </LinearLayout>
