@@ -1,6 +1,6 @@
 先演示一波动态图：
 
-![整体效果.gif](http://upload-images.jianshu.io/upload_images/4043475-1015dbce5faa6a90.gif?imageMogr2/auto-orient/strip)
+![整体效果.gif](http://upload-images.jianshu.io/upload_images/4043475-677a9c9f63ad6938.gif?imageMogr2/auto-orient/strip)
 
 > 话说这个布局就花了我半个小时...
 
@@ -133,7 +133,7 @@
 
 再来看一下效果：
 
-![整体效果.gif](http://upload-images.jianshu.io/upload_images/4043475-1015dbce5faa6a90.gif?imageMogr2/auto-orient/strip)
+![整体效果.gif](http://upload-images.jianshu.io/upload_images/4043475-677a9c9f63ad6938.gif?imageMogr2/auto-orient/strip)
 
 - 点击头像查看作者信息
 - 点击图片或文字查看文章内容
