@@ -28,6 +28,7 @@ public class ShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_show);
+
         String link = getIntent().getStringExtra("link");
 
         mTbShow = (Toolbar) findViewById(R.id.tb_show_activity);
