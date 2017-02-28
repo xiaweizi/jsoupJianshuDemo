@@ -36,6 +36,8 @@ public class JianshuAdapter extends BaseQuickAdapter<JianshuBean, BaseViewHolder
                 .setText(R.id.tv_talk, bean.getTalkNum())
                 .setText(R.id.tv_like, bean.getLikeNum())
                 .addOnClickListener(R.id.iv_primary)
+                .addOnClickListener(R.id.tv_content)
+                .addOnClickListener(R.id.tv_title)
                 .addOnClickListener(R.id.tv_collectTag)
                 .addOnClickListener(R.id.iv_avatar)
                 .addOnClickListener(R.id.tv_author);

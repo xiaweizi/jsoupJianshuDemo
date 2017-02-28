@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSimpleItemChildClick(BaseQuickAdapter adapter, View view, int position) {
                 switch (view.getId()){
-                    case R.id.tv_time:
+                    case R.id.tv_title:
                     case R.id.tv_content:
                     case R.id.iv_primary:
                         Intent title = new Intent(MainActivity.this, ShowActivity.class);
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                         JianshuBean bean = new JianshuBean();
                         bean.setAuthorName(element.select("div.name").text()); // 作者姓名
                         bean.setAuthorLink(element.select("a.blue-link").attr("abs:href")); // 作者首页链接
-                        bean.setTime(element.select("span.time").attr("data-shared-at"));   // 发表时间
+                        bean.setTime(timeChange(element.select("span.time").attr("data-shared-at")));   // 发表时间
                         bean.setPrimaryImg(element.select("img").attr("src"));  // 主图
                         bean.setAvatarImg(element.select("a.avatar").select("img").attr("src")); // 头像
 
@@ -163,8 +163,12 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }).start();
+    }
 
-
+    private String timeChange(String time){
+        String[] ts = time.split("T");
+        String[] split = ts[1].split("\\+");
+        return ts[0] + "    " +  split[0];
     }
 
 
