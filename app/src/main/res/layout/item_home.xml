@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="1dp">
 
                 <ImageView
