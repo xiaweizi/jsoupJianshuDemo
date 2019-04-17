@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.activity_main)
     RelativeLayout activityMain;
 
-    private Document document;
 
     private List<JianshuBean> mBeans;
 
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 try {
-                    document = Jsoup.connect("http://www.jianshu.com/")
+                    Document document  = Jsoup.connect("http://www.jianshu.com/")
                             .timeout(10000)
                             .get();
                     Elements noteList = document.select("ul.note-list");

@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FlowerActivity"
             android:configChanges="screenSize"
-            android:screenOrientation="portrait"
-            android:name=".MainActivity">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,9 +21,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ShowActivity"
             android:configChanges="screenSize"
-            android:screenOrientation="portrait"
-            android:name=".ShowActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
