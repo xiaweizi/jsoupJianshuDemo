@@ -167,8 +167,11 @@ public class MainActivity extends AppCompatActivity {
 
     private String timeChange(String time){
         String[] ts = time.split("T");
-        String[] split = ts[1].split("\\+");
-        return ts[0] + "    " +  split[0];
+        if (ts.length > 1) {
+            String[] split = ts[1].split("\\+");
+            return ts[0] + "    " +  split[0];
+        }
+        return ts[0];
     }
 
 
