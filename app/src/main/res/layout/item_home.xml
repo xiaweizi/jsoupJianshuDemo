@@ -10,57 +10,10 @@
     <RelativeLayout
         android:id="@+id/ll_jianshu"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="140dp"
         android:background="?attr/selectableItemBackground">
 
-        <LinearLayout
-            android:id="@+id/ll_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp">
 
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="1dp">
-
-                <ImageView
-                    android:id="@+id/iv_avatar"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher" />
-            </android.support.v7.widget.CardView>
-
-
-            <TextView
-                android:id="@+id/tv_author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="4dp"
-                android:clickable="true"
-                android:maxLines="1"
-                android:text="马力_可能性与大设计"
-                android:textColor="#333333" />
-
-            <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:maxLines="1"
-                android:text="前天 11:22"
-                android:textColor="#333333" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ll_bottom"
@@ -82,11 +35,10 @@
                 android:textColor="#ea6f5a" />
 
             <TextView
-                android:id="@+id/tv_read"
+                android:id="@+id/tv_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:drawableLeft="@drawable/read"
                 android:text="1444" />
 
             <TextView
@@ -131,7 +83,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/ll_bottom"
-            android:layout_below="@id/ll_title"
             android:layout_marginRight="20dp"
             android:layout_toLeftOf="@id/cv_primary"
             android:orientation="vertical"

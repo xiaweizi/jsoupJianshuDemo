@@ -27,21 +27,17 @@ public class JianshuAdapter extends BaseQuickAdapter<JianshuBean, BaseViewHolder
 
     @Override
     protected void convert(BaseViewHolder helper, JianshuBean bean) {
-        helper.setText(R.id.tv_author, bean.getAuthorName())
-                .setText(R.id.tv_time, bean.getTime())
+        helper.setText(R.id.tv_author, bean.getReadNum())
                 .setText(R.id.tv_title, bean.getTitle())
                 .setText(R.id.tv_content, bean.getContent())
                 .setText(R.id.tv_collectTag, bean.getCollectionTag())
-                .setText(R.id.tv_read, bean.getReadNum())
                 .setText(R.id.tv_talk, bean.getTalkNum())
                 .setText(R.id.tv_like, bean.getLikeNum())
                 .addOnClickListener(R.id.iv_primary)
                 .addOnClickListener(R.id.tv_content)
                 .addOnClickListener(R.id.tv_title)
                 .addOnClickListener(R.id.tv_collectTag)
-                .addOnClickListener(R.id.iv_avatar)
                 .addOnClickListener(R.id.tv_author);
-        Glide.with(context).load(bean.getAvatarImg()).crossFade().into((ImageView) helper.getView(R.id.iv_avatar));
         Glide.with(context).load(bean.getPrimaryImg()).crossFade().into((ImageView) helper.getView(R.id.iv_primary));
     }
 }

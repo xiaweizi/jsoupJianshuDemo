@@ -74,16 +74,15 @@ public class MainActivity extends AppCompatActivity {
                         title.putExtra("link", ((JianshuBean)adapter.getItem(position)).getTitleLink());
                         startActivity(title);
                         break;
-                    case R.id.iv_avatar:
                     case R.id.tv_author:
                         Intent author = new Intent(MainActivity.this, ShowActivity.class);
                         author.putExtra("link", ((JianshuBean)adapter.getItem(position)).getAuthorLink());
                         startActivity(author);
                         break;
                     case R.id.tv_collectTag:
-                        Intent collect = new Intent(MainActivity.this, ShowActivity.class);
-                        collect.putExtra("link", ((JianshuBean)adapter.getItem(position)).getCollectionTagLink());
-                        startActivity(collect);
+//                        Intent collect = new Intent(MainActivity.this, ShowActivity.class);
+//                        collect.putExtra("link", ((JianshuBean)adapter.getItem(position)).getCollectionTagLink());
+//                        startActivity(collect);
                         break;
                     default:
                         break;
@@ -104,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private static final String JIANSHU_BASE_URL = "http://www.jianshu.com";
+
     private void jsoupData() {
         srlJianshu.setRefreshing(true);
         mBeans.clear();
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 try {
-                    document = Jsoup.connect("http://www.jianshu.com/")
+                    document = Jsoup.connect(JIANSHU_BASE_URL)
                             .timeout(10000)
                             .get();
                     Elements noteList = document.select("ul.note-list");
@@ -120,10 +121,10 @@ public class MainActivity extends AppCompatActivity {
                     for (Element element : li) {
                         JianshuBean bean = new JianshuBean();
                         bean.setAuthorName(element.select("div.name").text()); // 作者姓名
-                        bean.setAuthorLink(element.select("a.blue-link").attr("abs:href")); // 作者首页链接
+                        bean.setAuthorLink(JIANSHU_BASE_URL + element.select("a.title").attr("href")); // 作者首页链接
                         bean.setTime(timeChange(element.select("span.time").attr("data-shared-at")));   // 发表时间
-                        bean.setPrimaryImg(element.select("img").attr("src"));  // 主图
                         bean.setAvatarImg(element.select("a.avatar").select("img").attr("src")); // 头像
+                        bean.setPrimaryImg("https:" + element.select("a.wrap-img").select("img").attr("src")); // 头像
 
                         bean.setTitle(element.select("a.title").text());    // 标题
                         bean.setTitleLink(element.select("a.title").attr("abs:href")); // 标题链接
